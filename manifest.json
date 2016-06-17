@@ -1,0 +1,53 @@
+[
+  {
+    "name": "redis-ms-01",
+    "hostname": "redis-ms-01.net",
+    "box": "debian/jessie64",
+    "ram": 128,
+    "vcpu": 1,
+    "ssh_guest_port": 7017,
+    "private_ip_addr": "192.168.70.17",
+    "scripts": [
+      [
+        "setup.sh", [
+          "redis-master.conf",
+          "redis-sentinel.conf"
+        ]
+      ]
+    ]
+  },
+  {
+    "name": "redis-ss-02",
+    "hostname": "redis-ss-02.net",
+    "box": "debian/jessie64",
+    "ram": 128,
+    "vcpu": 1,
+    "ssh_guest_port": 7018,
+    "private_ip_addr": "192.168.70.18",
+    "scripts": [
+      [
+        "setup.sh", [
+          "redis-slave.conf",
+          "redis-sentinel.conf"
+        ]
+      ]
+    ]
+  },
+  {
+    "name": "redis-ss-03",
+    "hostname": "redis-ss-03.net",
+    "box": "debian/jessie64",
+    "ram": 128,
+    "vcpu": 1,
+    "ssh_guest_port": 7019,
+    "private_ip_addr": "192.168.70.19",
+    "scripts": [
+      [
+        "setup.sh", [
+          "redis-slave.conf",
+          "redis-sentinel.conf"
+        ]
+      ]
+    ]
+  }
+]
